@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <script type="application/javascript">
+    function draw() {
+text="تُعَيِّرُنا أَنّا قَليلٌ عَديدُنا        فَقُلتُ لَها إِنَّ الكِرامَ قَليلُ"
+      var canvas = document.getElementById("canvas");
+      if (canvas.getContext) {
+        var ctx = canvas.getContext("2d");
+ctx.fillStyle = 'rgba(0, 0, 0)';
+        ctx.fillRect(25, 30, 800, 300);
+       
+ctx.fillStyle = 'rgba(250, 250, 245)';
+ctx.font = '24px serif';
+  ctx.fillText(text, 30,80);
+       
+        //ctx.fillStyle = 'rgb(200, 0, 0)';
+        //ctx.fillRect(10, 10, 20, 50);
+
+        
+      }
+    }
+  </script>
+ </head>
+ <body onload="draw();">
+   <canvas id="canvas" width="650" height="150"></canvas>
+ </body>
+</html>
