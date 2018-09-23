@@ -1,0 +1,29 @@
+<html>
+
+<head>
+<script>
+function transform(canvasid, filename, scale)
+{
+  var viewCanvas = document.getElementById(canvasid);
+  var viewCtx = viewCanvas.getContext("2d");
+  var imageSource = new Image();
+  imageSource.onload  = function () 
+  {
+    viewCanvas.width = imageSource.width * scale;
+    viewCanvas.height = imageSource.height  * scale;				
+    viewCtx.scale(scale,scale);
+    viewCtx.drawImage(imageSource, 0, 0);
+  }
+  imageSource.src = filename;
+}
+
+
+</script>
+<head>
+<body onload="transform('canvasid', 'im13.jpg', 1/2);">
+
+<canvas id ="canvasid" width="1000" height="200">
+
+</canvas>
+</body>
+</html>
